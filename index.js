@@ -47,7 +47,7 @@ async function checkForMarkdownHeader(filePath) {
       const octokit = github.getOctokit(token)
 
       // call octokit to create a check with annotations and details
-      const check = await octokit.checks.create({
+      const check = await octokit.rest.checks.create({
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         name: "Readme Validator",
