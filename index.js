@@ -43,10 +43,10 @@ async function checkForMarkdownHeader(filePath) {
 
     if (!(await checkForMarkdownHeader("README.md"))) {
       // get token for octokit
-      const token = core.getInput("token")
+      const token = core.getInput("repo-token")
       const octokit = github.getOctokit(token)
 
-			core.notice("Creating a check for README.md")
+	core.notice("Creating a check for README.md")
 
       // call octokit to create a check with annotations and details
       const check = await octokit.rest.checks.create({
